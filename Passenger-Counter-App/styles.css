@@ -22,14 +22,23 @@
     color: black;
 }
 
-#btn-increment{
+.btn{
     width: 200px;
     height: 40px;
-    background-color: white;
     font-weight: 500;
-    border: 1px solid black;
     border-radius: 12px;
     margin-top: 10px;
     cursor: pointer;
     font-size: 14px;
+    border: none;
+}
+#btn-increment{
+    background-color: darkgreen;
+}
+
+#btn-save{
+    background-color: darkred;
+}
+#prev-entries{
+    margin-top: 40px;
 }
