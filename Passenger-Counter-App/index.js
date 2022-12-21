@@ -1,4 +1,6 @@
+let count = 0
+let totalPeople = document.getElementById('total-people')
 function increment(){
-    let totalPeople = document.querySelector('#total-people').innerHTML
-    document.querySelector('#total-people').innerHTML = Number(totalPeople) + 1;
+    count = count + 1
+    totalPeople.innerText = count ;
 }
