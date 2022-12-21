@@ -21,3 +21,15 @@
     padding: 50px 0px 0px 20px;
     color: black;
 }
+
+#btn-increment{
+    width: 200px;
+    height: 40px;
+    background-color: white;
+    font-weight: 500;
+    border: 1px solid black;
+    border-radius: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
