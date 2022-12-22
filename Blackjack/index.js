@@ -1,7 +1,6 @@
-let firstCard = 11
-let secondCard = 2
+let cards = []
 
-let sum = firstCard + secondCard
+let sum = 0
 
 let hasBlackjack = false
 let isAlive = true
@@ -18,13 +17,14 @@ function startGame(){
 }
 
 function renderGame(){
+    cardsEl.textContent = "Cards: "
     sumEl.textContent = `Sum: ${sum}`
-    cardsEl.textContent = "Cards: " + firstCard + " " + secondCard 
+    cards.forEach((element)=>{
+        cardsEl.textContent += element + " "
+    })
     if(sum <= 20){
-        console.log("Do you want to draw another card?")
         message = "Do you want to draw another card?"
     }else if(sum === 21){
-        console.log("You've got a Blackjack")
         message = "You've got a Blackjack"
         hasBlackjack = true
     }else{
@@ -35,9 +35,19 @@ function renderGame(){
 }
 
 function newCard(){
-    let newCard = 12
+    let newCard = getRandomCard()
     sum += newCard
+    cards.push(getRandomCard())
     renderGame()
 }
+
+function getRandomCard(){
+    // if 1 then return 11
+    // if 11-13 then return 10
+    let randomNumber = Math.floor(Math.random() * 13) + 1
+    if(randomNumber === 1) return 11
+    if(randomNumber > 10) return 10
+    return randomNumber 
+} 
 
 console.log(message)
