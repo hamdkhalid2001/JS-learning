@@ -3,7 +3,7 @@ let cards = []
 let sum = 0
 
 let hasBlackjack = false
-let isAlive = true
+let isAlive = false
 let message = ""
 
 let messageEl = document.getElementById("message-heading")
@@ -12,7 +12,19 @@ messageEl.textContent = 'Want to play a round?'
 let sumEl = document.querySelector("#sumEl")
 let cardsEl = document.querySelector(".cardsEl")
 
+let player = {
+    name:"XYZ",
+    chips:"145"
+}
+
+let playerEl = document.querySelector("#player-el")
+playerEl.textContent = player.name + ": $" + player.chips
+
 function startGame(){
+    isAlive = true
+    cards[0] = getRandomCard()
+    cards[1] = getRandomCard()
+    sum = cards[0] + cards[1]
     renderGame()
 }
 
@@ -35,6 +47,7 @@ function renderGame(){
 }
 
 function newCard(){
+    if(!isAlive && hasBlackjack) return
     let newCard = getRandomCard()
     sum += newCard
     cards.push(getRandomCard())
@@ -51,3 +64,31 @@ function getRandomCard(){
 } 
 
 console.log(message)
+
+
+// Practice for objects and functions
+// const person = {
+//     name:"Hamd",
+//     age:21,
+//     country:"Pakistan"
+// }
+
+// function logData(){
+//     console.log(person.name + " is " + person.age + " years old and lives in " + person.country)
+// }
+// logData()
+
+//Practice for conditional statements
+// let age = 68;
+
+// if(age < 6){
+//     console.log("Free")
+// }else if(age <= 17){
+//     console.log("Child discount")
+// }else if(age <= 26){
+//     console.log("Student discount")
+// }else if(age <= 66){
+//     console.log("Full Price")
+// }else{
+//     console.log("Senior Citizen")
+// }
