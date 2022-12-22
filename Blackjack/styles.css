@@ -1,6 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .container{
@@ -19,24 +20,36 @@
     border-radius: 15px;
     text-align: center;
     padding: 50px 0px 0px 20px;
-    color: black;
+    color: white;
+    background-image: url("./images/table.png");
 }
 
-.number{
-    font-size: 29px;
+.main-heading{
+    color: goldenrod;
+}
+.sub-container h2{
+    margin: 30px 0px 20px 0px;
+    font-style: italic;
+}
+.sub-container h1 {
+    font-size: 42px;
 }
 
-#second-no{
-    margin-left: 10px;
+.sub-container p{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
 }
 .btn{
-    width: 200px;
-    height: 40px;
-    font-weight: 500;
-    border-radius: 12px;
     margin-top: 10px;
-    cursor: pointer;
-    font-size: 14px;
+    margin-bottom: 5px;
+    width: 200px;
+    background-color: goldenrod;
+    color: #016f32;
     border: none;
-    background-color: white;
+    height: 40px;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 18px;
 }
