@@ -1,9 +1,10 @@
 let firstCard = 11
-let secondCard = 8
+let secondCard = 11 
+let sum = firstCard + secondCard
 
-if((firstCard+secondCard) < 21){
+if(sum <= 20){
     console.log("Do you want to draw another card?")
-}else if((firstCard+secondCard) ===21){
+}else if(sum === 21){
     console.log("You've got a Blackjack")
 }else{
     console.log("You lose")
