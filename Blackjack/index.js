@@ -66,7 +66,7 @@ function getRandomCard(){
 console.log(message)
 
 
-// Practice for objects and functions
+// Practice problems for objects and functions
 // const person = {
 //     name:"Hamd",
 //     age:21,
@@ -78,7 +78,7 @@ console.log(message)
 // }
 // logData()
 
-//Practice for conditional statements
+//Practice problems for conditional statements
 // let age = 68;
 
 // if(age < 6){
@@ -92,3 +92,32 @@ console.log(message)
 // }else{
 //     console.log("Senior Citizen")
 // }
+
+//Practice problems for loops and arrays
+
+// const populatedCountries = ["China","India","USA","Indonesia","Pakistan"]
+
+// console.log("The 5 largest countries in the world")
+// populatedCountries.forEach((element)=>{
+//     console.log("- " + element)
+// })
+
+// const populatedCountries = ["Tuvalu","India","USA","Indonesia","Monaco"]
+// populatedCountries.pop()
+// populatedCountries.push("Pakistan")
+// populatedCountries.shift()
+// populatedCountries.unshift("China")
+
+//Practice problem for logical operators
+// let dayOfMonth = 13
+// let weekDay = "Friday"
+// if(dayOfMonth === 13 && weekDay === "Friday") console.log("Oops")
+
+//Rock paper scissor problem
+// const hands = ["rock" , "paper" , "scissors"]
+
+// function doTurn(){
+//     return hands[Math.floor(Math.random() *3)]
+// }
+
+// console.log(doTurn())
