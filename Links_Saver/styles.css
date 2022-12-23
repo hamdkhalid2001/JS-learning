@@ -44,7 +44,7 @@ body{
 #links-list li{
     list-style: none;
     text-decoration: none;
-    
+    display: inline-flex;
     margin-bottom: 5px;
 }
 
@@ -57,4 +57,16 @@ color: #5f9341;
     color: #5f9341;
     border: 1px solid gainsboro;
     padding: 9px 20px 9px 20px;
+}
+
+.remove-btn{
+    float: right;
+    cursor: pointer;
+    color: #5f9341;
+    /* display: inline-flex; */
+}
+
+.list-item{
+    display: flex;
+    justify-content: space-between;
 }

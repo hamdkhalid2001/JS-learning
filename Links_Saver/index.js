@@ -14,7 +14,7 @@ if(linkFromLocal){
 
 
 buttonEl.addEventListener("click",()=>{
-    if(!inputEl.value) return
+    if(!inputEl.value || myLink.includes(inputEl.value)) return
     myLink.push(inputEl.value)
     localStorage.setItem("myLinks",JSON.stringify(myLink))
     renderLinks(myLink)
@@ -29,7 +29,7 @@ buttonDelEl.addEventListener("click",()=>{
 
 buttonTab.addEventListener("click",()=>{
     // let activeTab
-    chrome.tabs.queury({active:true,currentWindow:true},function(tabs){
+    chrome.tabs.query({active:true,currentWindow:true},function(tabs){
         // activeTab = tabs[0]
         myLink.push(tabs[0].url)
         localStorage.setItem("myLinks",JSON.stringify(myLink))
@@ -38,10 +38,22 @@ buttonTab.addEventListener("click",()=>{
     
 })
 
+function deleteLink(linkId){
+    let deleteEl = document.querySelector("#"+linkId)
+    myLink = myLink.filter((Element)=>{
+        return deleteEl.textContent != Element
+    })
+    localStorage.setItem("myLinks",JSON.stringify(myLink))
+    renderLinks(myLink)
+}
+
 function renderLinks(links){
     listEl.innerHTML = ""
     if(!myLink) return
-    links.forEach((Element)=>{
-        listEl.innerHTML += `<a href="${Element}" target="_blank"><li>${Element}</li></a>`
+    links.forEach((Element,index)=>{
+        listEl.innerHTML += `<div>
+                                <a href="${Element}" target="_blank"><li id="list-item${index}">${Element}</li></a>
+                                <p class="remove-btn" onclick="deleteLink('list-item${index}')">Remove</p>
+                            </div>`
     })
 }
