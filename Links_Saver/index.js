@@ -1,9 +1,16 @@
 let myLink = []
 const inputEl = document.getElementById("input-el")
-const buttonEl = document.querySelector(".btn")
+const buttonEl = document.querySelector("#btn-save")
+const buttonDelEl = document.querySelector("#btn-del")
 const listEl = document.querySelector("#links-list")
 
-renderLinks()
+const linkFromLocal = JSON.parse(localStorage.getItem("myLinks"))
+
+if(linkFromLocal){
+    myLink = linkFromLocal
+    renderLinks()
+}
+
 
 buttonEl.addEventListener("click",()=>{
     if(!inputEl.value) return
@@ -13,11 +20,16 @@ buttonEl.addEventListener("click",()=>{
     inputEl.value = ""
 })
 
+buttonDelEl.addEventListener("click",()=>{
+    localStorage.clear()
+    myLink = []
+    renderLinks()
+})
+
 function renderLinks(){
-    myLink = JSON.parse(localStorage.getItem("myLinks"))
     listEl.innerHTML = ""
+    if(!myLink) return
     myLink.forEach((Element)=>{
         listEl.innerHTML += `<a href="${Element}" target="_blank"><li>${Element}</li></a>`
     })
-    
 }
