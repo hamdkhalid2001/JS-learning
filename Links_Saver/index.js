@@ -8,7 +8,7 @@ const linkFromLocal = JSON.parse(localStorage.getItem("myLinks"))
 
 if(linkFromLocal){
     myLink = linkFromLocal
-    renderLinks()
+    renderLinks(myLink)
 }
 
 
@@ -16,20 +16,20 @@ buttonEl.addEventListener("click",()=>{
     if(!inputEl.value) return
     myLink.push(inputEl.value)
     localStorage.setItem("myLinks",JSON.stringify(myLink))
-    renderLinks()
+    renderLinks(myLink)
     inputEl.value = ""
 })
 
 buttonDelEl.addEventListener("click",()=>{
     localStorage.clear()
     myLink = []
-    renderLinks()
+    renderLinks(myLink)
 })
 
-function renderLinks(){
+function renderLinks(links){
     listEl.innerHTML = ""
     if(!myLink) return
-    myLink.forEach((Element)=>{
+    links.forEach((Element)=>{
         listEl.innerHTML += `<a href="${Element}" target="_blank"><li>${Element}</li></a>`
     })
 }
