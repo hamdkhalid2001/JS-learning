@@ -2,6 +2,7 @@ let myLink = []
 const inputEl = document.getElementById("input-el")
 const buttonEl = document.querySelector("#btn-save")
 const buttonDelEl = document.querySelector("#btn-del")
+const buttonTab = document.querySelector("#btn-tab")
 const listEl = document.querySelector("#links-list")
 
 const linkFromLocal = JSON.parse(localStorage.getItem("myLinks"))
@@ -24,6 +25,17 @@ buttonDelEl.addEventListener("click",()=>{
     localStorage.clear()
     myLink = []
     renderLinks(myLink)
+})
+
+buttonTab.addEventListener("click",()=>{
+    // let activeTab
+    chrome.tabs.queury({active:true,currentWindow:true},function(tabs){
+        // activeTab = tabs[0]
+        myLink.push(tabs[0])
+        localStorage.setItem("myLinks",JSON.stringify(myLink))
+        renderLinks(myLink)
+    })
+    
 })
 
 function renderLinks(links){
