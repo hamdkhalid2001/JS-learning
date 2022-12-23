@@ -31,7 +31,7 @@ buttonTab.addEventListener("click",()=>{
     // let activeTab
     chrome.tabs.queury({active:true,currentWindow:true},function(tabs){
         // activeTab = tabs[0]
-        myLink.push(tabs[0])
+        myLink.push(tabs[0].url)
         localStorage.setItem("myLinks",JSON.stringify(myLink))
         renderLinks(myLink)
     })
