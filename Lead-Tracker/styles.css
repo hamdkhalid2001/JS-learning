@@ -17,7 +17,40 @@
     max-height: 400px;
     border: 2px solid black;
     border-radius: 15px;
-    text-align: center;
-    padding: 50px 0px 0px 20px;
-    color: black;
+    /* text-align: center; */
+    padding: 50px 20px 0px 20px;
+    
+    background-color: white;
+}
+#input-el{
+    border-radius: 2px;
+    border: none;
+    padding: 10px 0px 10px 5px;
+    font-weight: 600;
+    width: 100%;
+    border: 1px solid gray;
+}
+.btn{
+    padding: 10px 20px 10px 20px;
+    display: inline-block;
+    margin-top: 5px;
+    background-color: #5f9341;
+    border: none;
+    color: white;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+#links{
+    margin-top: 5px;
+}
+
+#links-list li{
+    list-style: none;
+    text-decoration: none;
+    
+    margin-bottom: 5px;
+}
+
+#links-list a {
+color: #5f9341;
 }
