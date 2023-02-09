@@ -32,7 +32,7 @@ function renderGame(){
     cardsEl.textContent = "Cards: "
     sumEl.textContent = `Sum: ${sum}`
     cards.forEach((element)=>{
-        cardsEl.textContent += element + "  "
+        cardsEl.textContent += element + "   "
     })
     if(sum <= 20){
         message = "Do you want to draw another card?"
